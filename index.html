@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://apps.bdimg.com/libs/jquery/1.8.0/jquery.js"></script>
+  <title>屠龙霸业</title>
+  <style>
+    * {
+      margin: 0;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    div {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 1080px;
+    }
+
+    .download1 {
+          width: 1rem;
+    height: 0.5rem;
+    display: block;
+    position: absolute;
+    top: 1.3rem;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    /* background: rgba(0,0,0,0.8); */
+    }
+
+    .download2 {
+      width: 1rem;
+      height: 0.5rem;
+      display: block;
+      position: absolute;
+      top: 0.1rem;
+      left: 0.04rem;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
+      /* background:rgba(0,0,0,0.8) */
+    }  </style>
+  <style>
+    .bj{
+      background-color: #000;
+      background-color:rgba(0,0,0,0.7);
+      margin: 0 auto;
+      width: 100%;
+      height:100%;
+      position: absolute;
+      top: 0;
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <a href="javascript:;" class="download1 btn"></a>
+  <a href="javascript:;" class="download2 btn"></a>
+  <img src="./game.png" alt="">
+
+</div>
+</body>
+
+<script>
+    var hw = document.documentElement.clientWidth
+    if (hw <= 1080) {
+        var W = hw / 750 * 100 * 2;
+        document.getElementsByTagName('html')[0].style.fontSize = W + 'px';
+    } else {
+        document.getElementsByTagName('html')[0].style.fontSize = '288px'
+    }
+    $(window).resize(function () {
+        var hw = document.documentElement.clientWidth
+        if (hw <= 1080) {
+            var W = hw / 750 * 100 * 2;
+            document.getElementsByTagName('html')[0].style.fontSize = W + 'px';
+        } else {
+            document.getElementsByTagName('html')[0].style.fontSize = '288px'
+        }
+    })
+    $('.btn').click(function () {
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("bj").style.display = "block";
+            return;
+        }
+        var platform = window.navigator.platform;
+        if(isAndroid()) {
+            window.location.href="";
+        }else if(platform.indexOf('Linux') != -1) {
+            window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
+        } else {
+            doLocation("http://apk4.maowan.com/7691_1296-ywapk");
+        }
+    })
+
+    /*
+     * 安卓
+     */
+    function isAndroid() {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        return isAndroid;
+
+    }
+
+    function doLocation(url) {
+        var a = document.createElement("a");
+        if (!a.click)
+        {
+            window.location = url;
+            return;
+        }
+        a.setAttribute("href", url);
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+    }
+</script>
+</html>

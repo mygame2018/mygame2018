@@ -18,7 +18,7 @@
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
-    img {
+    .bg {
       width: 100%;
     }
 
@@ -30,26 +30,32 @@
     }
 
 
-    @keyframes download1_keyframes
-    {
-      0%   {width: 1rem;height: 0.46rem;top: 1.69rem;}
-      25%  {width: 1.05rem;height: 0.5rem;top: 1.67rem;}
-      50%  {width: 1.1rem;height: 0.54rem;top: 1.65rem;}
-      75%  {width: 1.15rem;height: 0.58rem;top: 1.63rem;}
-      100% {width: 1.2rem;height: 0.62rem;top: 1.61rem;}
-    }
 
-    @-webkit-keyframes download1_keyframes /* Safari 和 Chrome */
-    {
-      0%   {width: 1rem;height: 0.46rem;top: 1.69rem;}
-      25%  {width: 1.05rem;height: 0.5rem;top: 1.67rem;}
-      50%  {width: 1.1rem;height: 0.54rem;top: 1.65rem;}
-      75%  {width: 1.15rem;height: 0.58rem;top: 1.63rem;}
-      100% {width: 1.2rem;height: 0.62rem;top: 1.61rem;}
-    }
+    /*@keyframes download1_keyframes*/
+    /*{*/
+      /*0%   {transform: scale(1,1)translateX(-50%);-webkit-transform: scale(1,1)translateX(-50%);}*/
+      /*25%  {transform: scale(1.05,1.05)translateX(-50%);-webkit-transform: scale(1.05,1.05)translateX(-50%);}*/
+      /*50%  {transform: scale(1.1,1.1)translateX(-50%);-webkit-transform: scale(1.1,1.1)translateX(-50%);}*/
+      /*75%  {transform: scale(1.15,1.15)translateX(-50%);-webkit-transform: scale(1.15,1.15)translateX(-50%);}*/
+      /*100% {transform: scale(1.2,1.2)translateX(-50%);-webkit-transform: scale(1.2,1.2)translateX(-50%);}*/
+    /*}*/
+
+    /*@-webkit-keyframes download1_keyframes !* Safari 和 Chrome *!*/
+    /*{*/
+      /*0%   {transform: scale(1,1)translateX(-50%);-webkit-transform: scale(1,1)translateX(-50%);}*/
+      /*25%  {transform: scale(1.05,1.05)translateX(-50%);-webkit-transform: scale(1.05,1.05)translateX(-50%);}*/
+      /*50%  {transform: scale(1.1,1.1)translateX(-50%);-webkit-transform: scale(1.1,1.1)translateX(-50%);}*/
+      /*75%  {transform: scale(1.15,1.15)translateX(-50%);-webkit-transform: scale(1.15,1.15)translateX(-50%);}*/
+      /*100% {transform: scale(1.2,1.2)translateX(-50%);-webkit-transform: scale(1.2,1.2)translateX(-50%);}*/
+
+    /*}*/
+
+
 
     .download1 {
-      animation:download1_keyframes 1s infinite alternate;
+      animation:download1_keyframes 0.8s infinite alternate;
+      -mos-animation: download1_keyframes 0.8s infinite alternate;
+      -o-animation: download1_keyframes 0.8s infinite alternate;
       -webkit-animation:download1_keyframes 0.8s infinite alternate; /* Safari 和 Chrome */
       cursor: pointer;
       width: 1rem;
@@ -66,39 +72,12 @@
     /* background: rgba(0,0,0,0.8); */
     }
 
-    .download2 {
-      width: 1rem;
-      height: 0.5rem;
-      display: block;
-      position: absolute;
-      top: 0.1rem;
-      left: 0.04rem;
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
-      transform: translateX(-50%);
-      left: 50%;
-      /* background:rgba(0,0,0,0.8) */
-    }  </style>
-  <style>
-    .bj{
-      background-color: #000;
-      background-color:rgba(0,0,0,0.7);
-      margin: 0 auto;
-      width: 100%;
-      height:100%;
-      position: absolute;
-      top: 0;
-      z-index: 999;
-      display: none;
-    }
   </style>
 </head>
 <body>
 <div class="content">
-  <img href="javascript:;" class="download1 btn download1_keyframes" src="./download.png"></img>
-  <img src="./game.png" alt="">
+  <img href="javascript:;" class="download1 btn" src="./download.png"></img>
+  <img src="./game.png" class="bg" alt="">
 
 </div>
 </body>
@@ -121,19 +100,6 @@
         }
     })
     $('.btn').click(function () {
-        // var ua = navigator.userAgent.toLowerCase();
-        // if(ua.match(/MicroMessenger/i) == "micromessenger") {
-        //     document.getElementById("bj").style.display = "block";
-        //     return;
-        // }
-        // var platform = window.navigator.platform;
-        // if(isAndroid()) {
-        //     window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
-        // }else if(platform.indexOf('Linux') != -1) {
-        //     window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
-        // } else {
-        //     doLocation("http://apk4.maowan.com/7691_1296-ywapk");
-        // }
 
         var u = navigator.userAgent, app = navigator.appVersion;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g

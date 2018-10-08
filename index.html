@@ -29,18 +29,40 @@
       max-width: 1080px;
     }
 
+
+    @keyframes download1_keyframes
+    {
+      0%   {width: 1rem;height: 0.46rem;top: 1.69rem;}
+      25%  {width: 1.05rem;height: 0.5rem;top: 1.67rem;}
+      50%  {width: 1.1rem;height: 0.54rem;top: 1.65rem;}
+      75%  {width: 1.15rem;height: 0.58rem;top: 1.63rem;}
+      100% {width: 1.2rem;height: 0.62rem;top: 1.61rem;}
+    }
+
+    @-webkit-keyframes download1_keyframes /* Safari 和 Chrome */
+    {
+      0%   {width: 1rem;height: 0.46rem;top: 1.69rem;}
+      25%  {width: 1.05rem;height: 0.5rem;top: 1.67rem;}
+      50%  {width: 1.1rem;height: 0.54rem;top: 1.65rem;}
+      75%  {width: 1.15rem;height: 0.58rem;top: 1.63rem;}
+      100% {width: 1.2rem;height: 0.62rem;top: 1.61rem;}
+    }
+
     .download1 {
-          width: 1rem;
-    height: 0.5rem;
-    display: block;
-    position: absolute;
-    top: 1.67rem;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    left: 50%;
+      animation:download1_keyframes 1s infinite alternate;
+      -webkit-animation:download1_keyframes 0.8s infinite alternate; /* Safari 和 Chrome */
+      cursor: pointer;
+      width: 1rem;
+      height: 0.5rem;
+      display: block;
+      position: absolute;
+      top: 1.67rem;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
     /* background: rgba(0,0,0,0.8); */
     }
 
@@ -75,7 +97,7 @@
 </head>
 <body>
 <div class="content">
-  <a href="javascript:;" class="download1 btn"></a>
+  <img href="javascript:;" class="download1 btn download1_keyframes" src="./download.png"></img>
   <img src="./game.png" alt="">
 
 </div>

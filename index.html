@@ -99,19 +99,31 @@
         }
     })
     $('.btn').click(function () {
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.match(/MicroMessenger/i) == "micromessenger") {
-            document.getElementById("bj").style.display = "block";
-            return;
-        }
-        var platform = window.navigator.platform;
-        if(isAndroid()) {
+        // var ua = navigator.userAgent.toLowerCase();
+        // if(ua.match(/MicroMessenger/i) == "micromessenger") {
+        //     document.getElementById("bj").style.display = "block";
+        //     return;
+        // }
+        // var platform = window.navigator.platform;
+        // if(isAndroid()) {
+        //     window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
+        // }else if(platform.indexOf('Linux') != -1) {
+        //     window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
+        // } else {
+        //     doLocation("http://apk4.maowan.com/7691_1296-ywapk");
+        // }
+
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isIOS) {
+            window.location.href="http://uri6.com/tkio/Mb6nM3a";
+        }else if (isAndroid) {
             window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
-        }else if(platform.indexOf('Linux') != -1) {
-            window.location.href="http://apk4.maowan.com/7691_1296-ywapk";
-        } else {
+        }else{
             doLocation("http://apk4.maowan.com/7691_1296-ywapk");
         }
+
     })
 
     /*

@@ -103,17 +103,22 @@
 
     function is_wx_qq(){
         var ua = navigator.userAgent.toLowerCase();
-        if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
+        if (ua.indexOf("15b202") > -1){
             return true;
         }
-        if(ua.indexOf('qqbrowser')> -1 && ua.indexOf(" qq")<0){
-            //qq浏览器
-            return false;
-        }
-        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-            //微信浏览器
-            return true;
-        }
+
+        // if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
+        //     return true;
+        // }
+        // if(ua.indexOf('qqbrowser')> -1 && ua.indexOf(" qq")<0){
+        //     //qq浏览器
+        //     return false;
+        // }
+        // if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        //     //微信浏览器
+        //     return true;
+        // }
+        
         return false;
         // if(ua.match(/MicroMessenger/i)=="micromessenger") {
         //     return true;

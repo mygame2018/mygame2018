@@ -101,25 +101,31 @@
     })
 
 
+    function isQQAPP(){
+        var isIosQQ = ( /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && /\sQQ/i.test(navigator.userAgent));
+        var isAndroidQQ = ( /(Android)/i.test(navigator.userAgent) && /MQQBrowser/i.test(navigator.userAgent) && /\sQQ/i.test((navigator.userAgent).split('MQQBrowser')));
+        // alert(isIosQQ+"--"+isAndroidQQ);
+        if(isIosQQ || isAndroidQQ){
+            return true;
+        }
+        return false;
+    }
+
+
     function is_wx_qq(){
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf("15b202") > -1){
+
+        if(isQQAPP()){
             return true;
         }
 
-        // if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
-        //     return true;
-        // }
-        // if(ua.indexOf('qqbrowser')> -1 && ua.indexOf(" qq")<0){
-        //     //qq浏览器
-        //     return false;
-        // }
-        // if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-        //     //微信浏览器
-        //     return true;
-        // }
-        
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            //微信浏览器
+            return true;
+        }
+
         return false;
+        
         // if(ua.match(/MicroMessenger/i)=="micromessenger") {
         //     return true;
         // } else if (ua.match(/QQ/i) == "qq") {
